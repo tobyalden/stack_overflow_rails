@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:notice] = "Welcome to Stack Overflow!"
+      flash[:notice] = "Sign up success!"
       redirect_to "/"
     else
       flash[:alert] = "There was a problem creating your account. Please try again."
