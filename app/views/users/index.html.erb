@@ -6,6 +6,8 @@
       <%= user.email %>
       <% if user.admin? %>
         <span> Admin </span>
+      <% else %>
+        <%= link_to "Make Admin", edit_user_path(user), :data => {:method => "patch"} %>
       <% end %>
     </li>
   <% end %>

@@ -14,7 +14,7 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2015-07-06T16:15:51-07:00">2015-07-06T16:15:51-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2015-07-06T16:42:59-07:00">2015-07-06T16:42:59-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -1449,13 +1449,13 @@
         <li class="covered" data-hits="19" data-linenumber="10">
           <span class="hits">19</span>
           
-          <code class="ruby">    self.password_salt = BCrypt::Engine.generate_salt</code>
+          <code class="ruby">    self.password_salt ||= BCrypt::Engine.generate_salt</code>
         </li>
       
         <li class="covered" data-hits="19" data-linenumber="11">
           <span class="hits">19</span>
           
-          <code class="ruby">    self.password_hash = BCrypt::Engine.hash_secret(password, password_salt)</code>
+          <code class="ruby">    self.password_hash ||= BCrypt::Engine.hash_secret(password, password_salt)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="12">
