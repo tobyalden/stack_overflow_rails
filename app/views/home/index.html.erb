@@ -1,1 +1,9 @@
 <h1>Welcome to "Stack Overflow"</h1>
+
+<% if current_user %>
+  <h4>Current User: <%= current_user.email %></h4>
+  <%= link_to 'Log Out', log_out_path, method: :delete %>
+<% else %>
+  <h4>Not logged in.</h4>
+  <%= link_to 'Log In', log_in_path %>
+<% end %>
