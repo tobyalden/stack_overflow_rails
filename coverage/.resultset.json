@@ -472,7 +472,7 @@
         1,
         null,
         1,
-        23,
+        28,
         null,
         null,
         null
@@ -481,6 +481,7 @@
         1,
         null,
         null,
+        1,
         1,
         null,
         1,
@@ -576,6 +577,12 @@
       ],
       "/Users/Guest/Desktop/stack_overflow/app/controllers/users_controller.rb": [
         1,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
         1,
         5,
         null,
@@ -598,6 +605,6 @@
         null
       ]
     },
-    "timestamp": 1436220402
+    "timestamp": 1436221546
   }
 }

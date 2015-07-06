@@ -1,4 +1,11 @@
 class UsersController < ApplicationController
+
+  def index
+    @user = current_user
+    @users = User.all
+    authorize @users
+  end
+
   def new
     @user = User.new
   end
