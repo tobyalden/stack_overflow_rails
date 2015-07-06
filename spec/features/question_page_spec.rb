@@ -36,3 +36,12 @@ describe 'the path to the questions index page' do
     expect(page).to have_content 'how do i computer'
   end
 end
+
+describe 'the path to an individual question show page' do
+  it 'displays the page of a single question' do
+    test_question = FactoryGirl.create(:question)
+    visit '/'
+    click_on test_question.id
+    expect(page).to have_content 'halp'
+  end
+end

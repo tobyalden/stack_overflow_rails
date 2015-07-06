@@ -1,11 +1,11 @@
 <h1>Welcome to "Stack Overflow"</h1>
 
 <% if current_user %>
-  <%= link_to 'Add a New Question', new_user_question_path(current_user) %> 
+  <%= link_to 'Add a New Question', new_user_question_path(current_user) %>
 <% end %>
 
 <ul>
   <% @questions.each do |question| %>
-    <li><%= question.title %></li>
+    <li><%= link_to question.title, user_question_path(question.user, question), :id => question.id %></li>
   <% end %>
 </ul>
