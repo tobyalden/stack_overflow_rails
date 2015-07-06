@@ -13,10 +13,10 @@ class QuestionsController < ApplicationController
 
   def create
     @user = User.find(params[:user_id])
-    @user.questions.new(question_params)
+    @question = @user.questions.new(question_params)
     if @question.save
       flash[:notice] = "Question has been successfully added!"
-      redirect_to '/'
+      redirect_to "/"
     else
       flash[:notice] = "There was a problem posting your question. Try again."
       render :new
