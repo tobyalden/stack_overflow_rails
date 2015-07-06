@@ -8,7 +8,7 @@ describe 'logging in successfully' do
     fill_in 'Email', :with => 'john@gmail.com'
     fill_in 'Password', :with => 'badpassword'
     click_on 'Log in'
-    expect(page).to have_content 'Current User: john@gmail.com'
+    expect(page).to have_content 'john@gmail.com'
   end
 end
 

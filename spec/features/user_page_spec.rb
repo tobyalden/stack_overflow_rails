@@ -7,7 +7,7 @@ describe 'successfully creating a new user' do
     fill_in 'Email', :with => 'john@gmail.com'
     fill_in 'Password', :with => 'badpassword'
     fill_in 'Password confirmation', :with => 'badpassword'
-    click_on 'Sign Up'
+    click_on 'new-user'
     expect(page).to have_content 'Sign up success!'
   end
 end
@@ -19,7 +19,7 @@ describe 'unsuccessfully creating a new user (password mismatch)' do
     fill_in 'Email', :with => 'john@gmail.com'
     fill_in 'Password', :with => 'badpassword'
     fill_in 'Password confirmation', :with => 'badpassword2'
-    click_on 'Sign Up'
+    click_on 'new-user'
     expect(page).to have_content 'There was a problem creating your account. Please try again.'
   end
 end
@@ -32,7 +32,7 @@ describe 'unsuccessfully creating a new user (user already exists)' do
     fill_in 'Email', :with => 'john@gmail.com'
     fill_in 'Password', :with => 'badpassword'
     fill_in 'Password confirmation', :with => 'badpassword'
-    click_on 'Sign Up'
+    click_on 'new-user'
     expect(page).to have_content 'There was a problem creating your account. Please try again.'
   end
 end

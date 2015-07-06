@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   validates_confirmation_of :password
   validates :email, uniqueness: true
   before_save :encrypt_password
+  has_many :questions
 
   def encrypt_password
     self.password_salt = BCrypt::Engine.generate_salt

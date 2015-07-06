@@ -330,10 +330,27 @@
         null,
         null
       ],
+      "/Users/Guest/Desktop/stack_overflow/spec/models/question_spec.rb": [
+        1,
+        null,
+        1,
+        2,
+        2,
+        2,
+        null
+      ],
+      "/Users/Guest/Desktop/stack_overflow/app/models/question.rb": [
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
       "/Users/Guest/Desktop/stack_overflow/spec/models/user_spec.rb": [
         1,
         null,
         1,
+        2,
         2,
         2,
         1,
@@ -343,6 +360,7 @@
         null
       ],
       "/Users/Guest/Desktop/stack_overflow/app/models/user.rb": [
+        1,
         1,
         1,
         1,
@@ -381,7 +399,7 @@
         1,
         null,
         1,
-        12,
+        31,
         null,
         null
       ],
@@ -436,6 +454,6 @@
         null
       ]
     },
-    "timestamp": 1436208026
+    "timestamp": 1436209858
   }
 }
