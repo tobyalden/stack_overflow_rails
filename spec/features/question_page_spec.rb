@@ -1,17 +1,8 @@
 require 'rails_helper'
 
-def log_in(email)
-  test_user = FactoryGirl.create(:user, :email => email)
-  visit '/'
-  click_on 'Log In'
-  fill_in 'Email', :with => email
-  fill_in 'Password', :with => 'badpassword'
-  click_on 'Log in'
-end
-
 describe 'successfully creating a new question' do
   it 'displays a link to a login page on the index' do
-    log_in("john@gmail.com")
+    user_log_in("john@gmail.com")
     click_on 'Add a New Question'
     fill_in 'Title', :with => 'How do I computer'
     fill_in 'Body', :with => 'pls help'
@@ -22,7 +13,7 @@ end
 
 describe 'unsuccessfully creating a new question' do
   it 'displays a link to a login page on the index' do
-    log_in("john@gmail.com")
+    user_log_in("john@gmail.com")
     click_on 'Add a New Question'
     click_on 'Submit Question'
     expect(page).to have_content 'There was a problem posting your question. Try again.'
@@ -48,7 +39,7 @@ end
 
 describe 'the path to answer a question' do
   it "displays a link to a form on each question's page" do
-    log_in("susan@gmail.com")
+    user_log_in("susan@gmail.com")
     test_question = FactoryGirl.create(:question)
     visit '/'
     click_on test_question.id
@@ -60,7 +51,7 @@ end
 
 describe 'unsuccessfully answer a question' do
   it "displays a link to a form on each question's page" do
-    log_in("susan@gmail.com")
+    user_log_in("susan@gmail.com")
     test_question = FactoryGirl.create(:question)
     visit '/'
     click_on test_question.id
