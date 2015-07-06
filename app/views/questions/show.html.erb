@@ -3,3 +3,18 @@
 <p>
   <%= @question.body %>
 </p>
+
+<ul>
+  <% @answers.each do |answer| %>
+    <li><%= answer.body %></li>
+  <% end %>
+</ul>
+
+<h4>Add an Answer</h4>
+<%= form_for [@question, Answer.new] do |f| %>
+  <div class="form-group">
+    <%= f.label :body %>
+    <%= f.text_area :body, :class => "form-control" %>
+  </div>
+  <%= f.submit "Submit Answer" %>
+<% end %>
