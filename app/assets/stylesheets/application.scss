@@ -15,3 +15,31 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+body {
+  background: url(https://upload.wikimedia.org/wikipedia/commons/c/c9/ENIAC_scientists_holding_various_parts_of_the_computer.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: 0px 50px;
+}
+
+textarea {
+    resize: none;
+}
+
+@media (min-width: 768px) {
+  .navbar-nav {
+    width: 100%;
+  }
+  .navbar-nav > li {
+    float: none;
+    display: inline-block;
+  }
+  .navbar-nav > li.navbar-right {
+    float: right !important;
+    padding-right: 15px;
+  }
+}

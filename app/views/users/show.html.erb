@@ -1,0 +1,9 @@
+<div class="panel panel-default">
+  <div class="panel-heading text-center">Questions <%= @user.email %> has posted:</div>
+  <ul class="list-group">
+    <% @user.questions.each do |question| %>
+      <li class="list-group-item"><%= link_to question.title, user_question_path(question.user, question), :id => question.id %></li>
+    <% end %>
+  </ul>
+  </div>
+</div>

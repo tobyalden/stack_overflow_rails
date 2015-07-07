@@ -1,13 +1,10 @@
-<h1>New Question</h1>
-  <%=form_for [current_user, @question] do |f| %>
-  <div class="form-group">
-    <%=f.label :title %>
-    <%=f.text_field :title, :class => "form-control" %>
-  </div>
-  <div class="form-group">
-    <%=f.label :body %>
-    <%=f.text_area :body, :class => "form-control" %>
-  </div>
-  <%=f.submit "Submit Question" %>
-
-<%end%>
+<div class="panel panel-default">
+  <div class="panel-heading text-center">New Question</div>
+    <div class="panel-body">
+    <%= bootstrap_form_for [current_user, @question] do |f| %>
+      <%=f.text_field :title %>
+      <%=f.text_area :body %>
+    <%=f.submit "Submit Question" %>
+  <%end%>
+</div>
+</div>

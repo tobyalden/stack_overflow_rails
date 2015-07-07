@@ -79,3 +79,11 @@ describe 'unsuccessfully access all users page (logged in as non-admin)' do
     expect(page).to have_content('You are not authorized to perform this action.')
   end
 end
+
+describe 'takes user to their profile page' do
+  it 'displays all the questions the user has posted' do
+    user_log_in('john@gmail.com')
+    click_on 'john@gmail.com'
+    expect(page).to have_content 'Questions john@gmail.com has posted:'
+  end
+end

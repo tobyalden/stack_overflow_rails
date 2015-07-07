@@ -1,20 +1,21 @@
-<h2> <%= @question.title %> asked by <%= @user.email %> </h2>
-
-<p>
-  <%= @question.body %>
-</p>
-
-<ul>
-  <% @answers.each do |answer| %>
-    <li><%= answer.body %></li>
-  <% end %>
-</ul>
-
-<h4>Add an Answer</h4>
-<%= form_for [@question, Answer.new] do |f| %>
-  <div class="form-group">
-    <%= f.label :body %>
-    <%= f.text_area :body, :class => "form-control" %>
+<div class="panel panel-default">
+  <div class="panel-heading text-center"><%= @question.title %> asked by <%= @user.email %></div>
+  <div class="panel-body">
+    <%= @question.body %>
   </div>
-  <%= f.submit "Submit Answer" %>
-<% end %>
+  <ul class="list-group">
+    <% @answers.each do |answer| %>
+      <li class="list-group-item"> <b><%= User.find(answer.user_id).email %></b>: <%= answer.body %></li>
+    <% end %>
+  </ul>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading text-center">Add an Answer</div>
+  <div class="panel-body">
+      <%= bootstrap_form_for [@question, Answer.new] do |f| %>
+          <%= f.text_area :body, hide_label: true, :rows => "5" %>
+        <%= f.submit "Submit Answer", :class => 'btn btn-success' %>
+      <% end %>
+  </div>
+</div>

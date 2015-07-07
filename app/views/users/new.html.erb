@@ -1,16 +1,11 @@
-<h1>Sign Up</h1>
-  <%=form_for @user do |f| %>
-  <div class="form-group">
-    <%=f.label :email %>
-    <%=f.text_field :email, :class => "form-control" %>
+<div class="panel panel-default">
+  <div class="panel-heading text-center">Sign Up</div>
+    <div class="panel-body">
+      <%= bootstrap_form_for @user do |f| %>
+        <%=f.email_field :email %>
+        <%=f.password_field :password %>
+        <%=f.password_field :password_confirmation %>
+      <%=f.submit "Sign Up", :id => 'new-user', :class => 'btn btn-success' %>
+    <%end%>
   </div>
-  <div class="form-group">
-    <%=f.label :password %>
-    <%=f.password_field :password, :class => "form-control" %>
-  </div>
-  <div class="form-group">
-    <%=f.label :password_confirmation %>
-    <%=f.password_field :password_confirmation, :class => "form-control" %>
-  </div>
-  <%=f.submit "Sign Up", :id => 'new-user' %>
-<%end%>
+</div>

@@ -1,7 +1,9 @@
 class AnswersController < ApplicationController
   def create
     @question = Question.find(params[:question_id])
+    @user = current_user
     @answer = @question.answers.new(answer_params)
+    @user.answers.push(@answer)
     if @answer.save
       flash[:notice] = "Your answer has been added!"
     else
