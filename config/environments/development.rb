@@ -17,8 +17,15 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
 
   #Change mail delivery to either :smtp, :sendmail, :file, :test
-  config.action_mailer.delivery_method = :letter_opener
-
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :authentication => :plain,
+    :address => "smtp.mailgun.org",
+    :port => 587,
+    :domain => "sandboxa4f992bfff904dd1b7718c1dffff7b85.mailgun.org",
+    :user_name => "postmaster@sandboxa4f992bfff904dd1b7718c1dffff7b85.mailgun.org",
+    :password => "2df980cf44f01c46c5c6dc549af5251e"
+  }
   # Specify what domain to user for mailer URLs
   config.action_mailer.default_url_options = {host: "localhost:3000"}
 

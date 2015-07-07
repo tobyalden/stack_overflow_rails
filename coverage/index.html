@@ -14,7 +14,7 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2015-07-07T11:51:23-07:00">2015-07-07T11:51:23-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2015-07-07T12:15:06-07:00">2015-07-07T12:15:06-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -133,7 +133,7 @@
       <tr>
         <td class="strong"><a href="#917300c3053a4a21e12333992e35d355cb5c0495" class="src_link" title="app/mailers/user_mailer.rb">app/mailers/user_mailer.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>13</td>
+        <td>25</td>
         <td>5</td>
         <td>5</td>
         <td>0</td>
@@ -1525,7 +1525,7 @@
         <li class="never" data-hits="" data-linenumber="10">
           
           
-          <code class="ruby">    </code>
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="26" data-linenumber="11">
@@ -1537,10 +1537,82 @@
         <li class="never" data-hits="" data-linenumber="12">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="13">
+          
+          
+          <code class="ruby">    # # First, instantiate the Mailgun Client with your API key</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="14">
+          
+          
+          <code class="ruby">    # mg_client = Mailgun::Client.new &quot;key-9230a35dbfae9dffe0c54549455138e1&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="15">
+          
+          
+          <code class="ruby">    #</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="16">
+          
+          
+          <code class="ruby">    # # Define your message parameters</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="17">
+          
+          
+          <code class="ruby">    # message_params = {:from    =&gt; &#39;welcome@stackunderflow.com&#39;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="18">
+          
+          
+          <code class="ruby">    #                   :to      =&gt; @user.email,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="19">
+          
+          
+          <code class="ruby">    #                   :subject =&gt; &#39;Welcome to Stack Underflow&#39;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="20">
+          
+          
+          <code class="ruby">    #                   :text    =&gt; &#39;We care because you do.&#39;}</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="21">
+          
+          
+          <code class="ruby">    #</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="22">
+          
+          
+          <code class="ruby">    # # Send your message through the client</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="23">
+          
+          
+          <code class="ruby">    # mg_client.send_message &quot;stackunderflow.com&quot;, message_params</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="24">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="25">
           
           
           <code class="ruby">end</code>

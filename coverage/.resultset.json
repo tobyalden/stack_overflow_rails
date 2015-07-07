@@ -568,6 +568,18 @@
         null,
         26,
         null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
         null
       ],
       "/Users/Guest/Desktop/stack_overflow_rails/app/mailers/application_mailer.rb": [
@@ -761,6 +773,6 @@
         null
       ]
     },
-    "timestamp": 1436295083
+    "timestamp": 1436296506
   }
 }
