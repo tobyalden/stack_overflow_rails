@@ -8,4 +8,9 @@ describe User do
     test_user = FactoryGirl.create(:user)
     expect(test_user.password_hash).not_to eq(nil)
   end
+
+  it "sends an email when the user is created" do
+    user = FactoryGirl.create(:user)
+    expect(ActionMailer::Base.deliveries.last[:to].value).to eq(user.email)
+  end
 end

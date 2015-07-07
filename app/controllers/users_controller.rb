@@ -22,10 +22,12 @@ class UsersController < ApplicationController
   end
 
   def update
+    if params[:update_info] == "make_admin"
       authorize user = User.find(params[:id])
       user.update(:admin? => true)
       flash[:notice] = "#{user.email} was given admin status."
       redirect_to users_path
+    end
   end
 
   def destroy
