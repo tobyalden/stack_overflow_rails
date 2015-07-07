@@ -8,6 +8,9 @@
         <span> Admin </span>
       <% else %>
         <%= link_to "Make Admin", user_path(user, :update_info => "make_admin"), :method => "patch", :id => user.id %>
+        <!-- <%= link_to "Delete User", user_path(user), :method => "delete", :id => "delete #{user.id}" %> -->
+        <%= link_to "Delete User", user_path(user), :data => {:confirm => "Are you sure?",
+										                                          :method => "delete"}, :id => "delete #{user.id}" %>
       <% end %>
     </li>
   <% end %>

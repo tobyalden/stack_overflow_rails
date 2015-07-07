@@ -22,13 +22,20 @@ class UsersController < ApplicationController
   end
 
   def update
-    if params[:update_info] == "make_admin"
-      if current_user.admin?
-        user = User.find(params[:id])
-        user.update(:admin? => true)
-        flash[:notice] = "#{user.email} was given admin status."
-        redirect_to users_path
-      end
+    if current_user.admin? && params[:update_info] == "make_admin"
+      user = User.find(params[:id])
+      user.update(:admin? => true)
+      flash[:notice] = "#{user.email} was given admin status."
+      redirect_to users_path
+    end
+  end
+
+  def destroy
+    if current_user.admin?
+      user = User.find(params[:id])
+      user.destroy
+      flash[:notice] = "#{user.email} has been deleted."
+      redirect_to users_path
     end
   end
 
