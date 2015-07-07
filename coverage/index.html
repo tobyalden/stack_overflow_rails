@@ -14,7 +14,7 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2015-07-07T15:56:18-07:00">2015-07-07T15:56:18-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2015-07-07T15:57:29-07:00">2015-07-07T15:57:29-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -323,9 +323,9 @@
       <tr>
         <td class="strong"><a href="#e4b44e2ab2c5e0cd2fe07a4597587184f19c0e84" class="src_link" title="spec/features/admin_page_spec.rb">spec/features/admin_page_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
+        <td>30</td>
         <td>21</td>
-        <td>15</td>
-        <td>15</td>
+        <td>21</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -353,11 +353,11 @@
       <tr>
         <td class="strong"><a href="#26e10d3e97b62a2fcdf61f847bf47547f477d2aa" class="src_link" title="spec/features/user_page_spec.rb">spec/features/user_page_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>89</td>
-        <td>64</td>
-        <td>64</td>
+        <td>82</td>
+        <td>58</td>
+        <td>58</td>
         <td>0</td>
-        <td>1.7</td>
+        <td>1.8</td>
       </tr>
       
       <tr>
@@ -3307,8 +3307,8 @@
     <h3>spec/features/admin_page_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>15</b> relevant lines. 
-      <span class="green"><b>15</b> lines covered</span> and
+      <b>21</b> relevant lines. 
+      <span class="green"><b>21</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -3331,112 +3331,166 @@
         <li class="covered" data-hits="1" data-linenumber="3">
           <span class="hits">1</span>
           
-          <code class="ruby">describe &#39;successfully makes a non-admin an admin&#39; do</code>
+          <code class="ruby">describe &#39;successfully access all users page&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="4">
           <span class="hits">1</span>
           
-          <code class="ruby">  it &#39;displays a link next to a user to assign them as admin&#39; do</code>
+          <code class="ruby">  it &#39;allows the admin to see all the users&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="5">
           <span class="hits">1</span>
           
-          <code class="ruby">    non_admin_user = FactoryGirl.create(:user)</code>
+          <code class="ruby">    admin_log_in</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="6">
           <span class="hits">1</span>
           
-          <code class="ruby">    admin_log_in</code>
+          <code class="ruby">    test_user = FactoryGirl.create(:user)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="7">
           <span class="hits">1</span>
           
-          <code class="ruby">    click_on &#39;Admin Panel&#39;</code>
+          <code class="ruby">    visit users_path</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="8">
           <span class="hits">1</span>
           
-          <code class="ruby">    click_on non_admin_user.id</code>
+          <code class="ruby">    expect(page).to have_content(test_user.email)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="9">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="9">
           
-          <code class="ruby">    expect(page).to have_content &quot;#{non_admin_user.email} was given admin status.&quot;</code>
+          
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="10">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="11">
           
           
-          <code class="ruby">end</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="12">
+        <li class="covered" data-hits="1" data-linenumber="12">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">describe &#39;successfully makes a non-admin an admin&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="13">
           <span class="hits">1</span>
           
-          <code class="ruby">describe &#39;successfully deletes non-admin users&#39; do</code>
+          <code class="ruby">  it &#39;displays a link next to a user to assign them as admin&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="14">
           <span class="hits">1</span>
           
-          <code class="ruby">  it &#39;displays a link next to a user to delete their account&#39; do</code>
+          <code class="ruby">    non_admin_user = FactoryGirl.create(:user)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="15">
           <span class="hits">1</span>
           
-          <code class="ruby">    non_admin_user = FactoryGirl.create(:user)</code>
+          <code class="ruby">    admin_log_in</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="16">
           <span class="hits">1</span>
           
-          <code class="ruby">    admin_log_in</code>
+          <code class="ruby">    click_on &#39;Admin Panel&#39;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="17">
           <span class="hits">1</span>
           
-          <code class="ruby">    click_on &#39;Admin Panel&#39;</code>
+          <code class="ruby">    click_on non_admin_user.id</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="18">
           <span class="hits">1</span>
           
-          <code class="ruby">    click_on &quot;delete #{non_admin_user.id}&quot;</code>
+          <code class="ruby">    expect(page).to have_content &quot;#{non_admin_user.email} was given admin status.&quot;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="19">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    expect(page).to have_content &quot;#{non_admin_user.email} has been deleted.&quot;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="20">
+        <li class="never" data-hits="" data-linenumber="19">
           
           
           <code class="ruby">  end</code>
         </li>
       
+        <li class="never" data-hits="" data-linenumber="20">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
         <li class="never" data-hits="" data-linenumber="21">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="22">
+          <span class="hits">1</span>
+          
+          <code class="ruby">describe &#39;successfully deletes non-admin users&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="23">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  it &#39;displays a link next to a user to delete their account&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="24">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    non_admin_user = FactoryGirl.create(:user)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="25">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    admin_log_in</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="26">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    click_on &#39;Admin Panel&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="27">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    click_on &quot;delete #{non_admin_user.id}&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="28">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(page).to have_content &quot;#{non_admin_user.email} has been deleted.&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="29">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="30">
           
           
           <code class="ruby">end</code>
@@ -4081,8 +4135,8 @@
     <h3>spec/features/user_page_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>64</b> relevant lines. 
-      <span class="green"><b>64</b> lines covered</span> and
+      <b>58</b> relevant lines. 
+      <span class="green"><b>58</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -4438,28 +4492,28 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="59">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="59">
           
-          <code class="ruby">describe &#39;successfully access all users page&#39; do</code>
+          
+          <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="60">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="60">
           
-          <code class="ruby">  it &#39;allows the admin to see all the users&#39; do</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="61">
           <span class="hits">1</span>
           
-          <code class="ruby">    admin_log_in</code>
+          <code class="ruby">describe &#39;unsuccessfully access all users page (not logged in)&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="62">
           <span class="hits">1</span>
           
-          <code class="ruby">    test_user = FactoryGirl.create(:user)</code>
+          <code class="ruby">  it &#39;does not allow non-admins to see all users&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="63">
@@ -4471,7 +4525,7 @@
         <li class="covered" data-hits="1" data-linenumber="64">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(page).to have_content(test_user.email)</code>
+          <code class="ruby">    expect(page).to have_content(&#39;You are not authorized to perform this action.&#39;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="65">
@@ -4495,7 +4549,7 @@
         <li class="covered" data-hits="1" data-linenumber="68">
           <span class="hits">1</span>
           
-          <code class="ruby">describe &#39;unsuccessfully access all users page (not logged in)&#39; do</code>
+          <code class="ruby">describe &#39;unsuccessfully access all users page (logged in as non-admin)&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="69">
@@ -4507,118 +4561,76 @@
         <li class="covered" data-hits="1" data-linenumber="70">
           <span class="hits">1</span>
           
-          <code class="ruby">    visit users_path</code>
+          <code class="ruby">    user_log_in(&quot;dave@party.net&quot;)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="71">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(page).to have_content(&#39;You are not authorized to perform this action.&#39;)</code>
+          <code class="ruby">    visit users_path</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="72">
+        <li class="covered" data-hits="1" data-linenumber="72">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    expect(page).to have_content(&#39;You are not authorized to perform this action.&#39;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="73">
           
           
-          <code class="ruby">end</code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="74">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="75">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="75">
           
-          <code class="ruby">describe &#39;unsuccessfully access all users page (logged in as non-admin)&#39; do</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="76">
           <span class="hits">1</span>
           
-          <code class="ruby">  it &#39;does not allow non-admins to see all users&#39; do</code>
+          <code class="ruby">describe &#39;takes user to their profile page&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="77">
           <span class="hits">1</span>
           
-          <code class="ruby">    user_log_in(&quot;dave@party.net&quot;)</code>
+          <code class="ruby">  it &#39;displays all the questions the user has posted&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="78">
           <span class="hits">1</span>
           
-          <code class="ruby">    visit users_path</code>
+          <code class="ruby">    user_log_in(&#39;john@gmail.com&#39;)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="79">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(page).to have_content(&#39;You are not authorized to perform this action.&#39;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="80">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="81">
-          
-          
-          <code class="ruby">end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="82">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="83">
-          <span class="hits">1</span>
-          
-          <code class="ruby">describe &#39;takes user to their profile page&#39; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="84">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  it &#39;displays all the questions the user has posted&#39; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="85">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    user_log_in(&#39;john@gmail.com&#39;)</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="86">
-          <span class="hits">1</span>
-          
           <code class="ruby">    click_on &#39;john@gmail.com&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="87">
+        <li class="covered" data-hits="1" data-linenumber="80">
           <span class="hits">1</span>
           
           <code class="ruby">    expect(page).to have_content &#39;Questions john@gmail.com has posted:&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="88">
+        <li class="never" data-hits="" data-linenumber="81">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="89">
+        <li class="never" data-hits="" data-linenumber="82">
           
           
           <code class="ruby">end</code>

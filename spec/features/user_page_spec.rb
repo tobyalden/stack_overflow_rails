@@ -56,14 +56,7 @@ describe 'unsuccessfully creating a new user (user already exists)' do
   end
 end
 
-describe 'successfully access all users page' do
-  it 'allows the admin to see all the users' do
-    admin_log_in
-    test_user = FactoryGirl.create(:user)
-    visit users_path
-    expect(page).to have_content(test_user.email)
-  end
-end
+
 
 describe 'unsuccessfully access all users page (not logged in)' do
   it 'does not allow non-admins to see all users' do
