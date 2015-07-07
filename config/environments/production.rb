@@ -1,4 +1,15 @@
 Rails.application.configure do
+  # Courtesy http://www.leemunroe.com/send-automated-email-ruby-rails-mailgun/
+  # Change mail delivery to either :smtp, :sendmail, :file, :test
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :authentication => :plain,
+    :address => "smtp.mailgun.org",
+    :port => 587,
+    :domain => "sandboxa4f992bfff904dd1b7718c1dffff7b85.mailgun.org",
+    :user_name => "postmaster@sandboxa4f992bfff904dd1b7718c1dffff7b85.mailgun.org",
+    :password => "2df980cf44f01c46c5c6dc549af5251e"
+  }
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
