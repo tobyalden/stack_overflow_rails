@@ -14,7 +14,7 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2015-07-07T09:45:55-07:00">2015-07-07T09:45:55-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2015-07-07T10:04:39-07:00">2015-07-07T10:04:39-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,15 +25,15 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.28
+         2.36
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>32</b> files in total.
-    <b>339</b> relevant lines. 
-    <span class="green"><b>339</b> lines covered</span> and
+    <b>341</b> relevant lines. 
+    <span class="green"><b>341</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -67,7 +67,7 @@
         <td>11</td>
         <td>11</td>
         <td>0</td>
-        <td>15.2</td>
+        <td>17.5</td>
       </tr>
       
       <tr>
@@ -103,11 +103,11 @@
       <tr>
         <td class="strong"><a href="#e725739fadcf0fa82dfa23587cb8e293629bfd23" class="src_link" title="app/controllers/users_controller.rb">app/controllers/users_controller.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>46</td>
-        <td>29</td>
-        <td>29</td>
+        <td>42</td>
+        <td>27</td>
+        <td>27</td>
         <td>0</td>
-        <td>2.0</td>
+        <td>2.1</td>
       </tr>
       
       <tr>
@@ -153,11 +153,11 @@
       <tr>
         <td class="strong"><a href="#70ec3d4d3bd4184aea445ad35a475687331f064b" class="src_link" title="app/policies/user_policy.rb">app/policies/user_policy.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>12</td>
-        <td>6</td>
-        <td>6</td>
+        <td>20</td>
+        <td>10</td>
+        <td>10</td>
         <td>0</td>
-        <td>3.0</td>
+        <td>2.4</td>
       </tr>
       
       <tr>
@@ -303,7 +303,7 @@
       <tr>
         <td class="strong"><a href="#e4b44e2ab2c5e0cd2fe07a4597587184f19c0e84" class="src_link" title="spec/features/admin_page_spec.rb">spec/features/admin_page_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>22</td>
+        <td>21</td>
         <td>15</td>
         <td>15</td>
         <td>0</td>
@@ -562,8 +562,8 @@
           <code class="ruby">  def current_user</code>
         </li>
       
-        <li class="covered" data-hits="155" data-linenumber="8">
-          <span class="hits">155</span>
+        <li class="covered" data-hits="181" data-linenumber="8">
+          <span class="hits">181</span>
           
           <code class="ruby">    @current_user ||= User.find(session[:user_id]) if session[:user_id]</code>
         </li>
@@ -1075,8 +1075,8 @@
     <h3>app/controllers/users_controller.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>29</b> relevant lines. 
-      <span class="green"><b>29</b> lines covered</span> and
+      <b>27</b> relevant lines. 
+      <span class="green"><b>27</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -1231,130 +1231,106 @@
         <li class="covered" data-hits="1" data-linenumber="25">
           <span class="hits">1</span>
           
-          <code class="ruby">    if current_user.admin? &amp;&amp; params[:update_info] == &quot;make_admin&quot;</code>
+          <code class="ruby">      authorize user = User.find(params[:id])</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="26">
           <span class="hits">1</span>
           
-          <code class="ruby">      user = User.find(params[:id])</code>
+          <code class="ruby">      user.update(:admin? =&gt; true)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="27">
           <span class="hits">1</span>
           
-          <code class="ruby">      user.update(:admin? =&gt; true)</code>
+          <code class="ruby">      flash[:notice] = &quot;#{user.email} was given admin status.&quot;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="28">
           <span class="hits">1</span>
           
-          <code class="ruby">      flash[:notice] = &quot;#{user.email} was given admin status.&quot;</code>
+          <code class="ruby">      redirect_to users_path</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="29">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="29">
           
-          <code class="ruby">      redirect_to users_path</code>
+          
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="30">
           
           
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="31">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="32">
-          
-          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="33">
+        <li class="covered" data-hits="1" data-linenumber="31">
           <span class="hits">1</span>
           
           <code class="ruby">  def destroy</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="34">
+        <li class="covered" data-hits="1" data-linenumber="32">
           <span class="hits">1</span>
           
-          <code class="ruby">    if current_user.admin?</code>
+          <code class="ruby">      authorize user = User.find(params[:id])</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="35">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      user = User.find(params[:id])</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="36">
+        <li class="covered" data-hits="1" data-linenumber="33">
           <span class="hits">1</span>
           
           <code class="ruby">      user.destroy</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="37">
+        <li class="covered" data-hits="1" data-linenumber="34">
           <span class="hits">1</span>
           
           <code class="ruby">      flash[:notice] = &quot;#{user.email} has been deleted.&quot;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="38">
+        <li class="covered" data-hits="1" data-linenumber="35">
           <span class="hits">1</span>
           
           <code class="ruby">      redirect_to users_path</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="39">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="40">
+        <li class="never" data-hits="" data-linenumber="36">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="41">
+        <li class="never" data-hits="" data-linenumber="37">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="42">
+        <li class="covered" data-hits="1" data-linenumber="38">
           <span class="hits">1</span>
           
           <code class="ruby">  private</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="43">
+        <li class="covered" data-hits="1" data-linenumber="39">
           <span class="hits">1</span>
           
           <code class="ruby">  def user_params</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="44">
+        <li class="covered" data-hits="3" data-linenumber="40">
           <span class="hits">3</span>
           
           <code class="ruby">    params.require(:user).permit(:email, :password, :password_confirmation)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="45">
+        <li class="never" data-hits="" data-linenumber="41">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="46">
+        <li class="never" data-hits="" data-linenumber="42">
           
           
           <code class="ruby">end</code>
@@ -1651,8 +1627,8 @@
     <h3>app/policies/user_policy.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>6</b> relevant lines. 
-      <span class="green"><b>6</b> lines covered</span> and
+      <b>10</b> relevant lines. 
+      <span class="green"><b>10</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -1684,8 +1660,8 @@
           <code class="ruby">  def initialize(user, users)</code>
         </li>
       
-        <li class="covered" data-hits="7" data-linenumber="5">
-          <span class="hits">7</span>
+        <li class="covered" data-hits="9" data-linenumber="5">
+          <span class="hits">9</span>
           
           <code class="ruby">    @user = user</code>
         </li>
@@ -1726,7 +1702,55 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="12">
+        <li class="covered" data-hits="1" data-linenumber="12">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def update?</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="13">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    @user &amp;&amp; @user.admin?</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="14">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="15">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="16">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def destroy?</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="17">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    @user &amp;&amp; @user.admin?</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="18">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="19">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="20">
           
           
           <code class="ruby">end</code>
@@ -3085,7 +3109,7 @@
         <li class="covered" data-hits="1" data-linenumber="7">
           <span class="hits">1</span>
           
-          <code class="ruby">    visit users_path</code>
+          <code class="ruby">    click_on &#39;Admin Panel&#39;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="8">
@@ -3145,7 +3169,7 @@
         <li class="covered" data-hits="1" data-linenumber="17">
           <span class="hits">1</span>
           
-          <code class="ruby">    visit users_path</code>
+          <code class="ruby">    click_on &#39;Admin Panel&#39;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="18">
@@ -3154,25 +3178,19 @@
           <code class="ruby">    click_on &quot;delete #{non_admin_user.id}&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="19">
-          
-          
-          <code class="ruby">    # page.accept_alert</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="20">
+        <li class="covered" data-hits="1" data-linenumber="19">
           <span class="hits">1</span>
           
           <code class="ruby">    expect(page).to have_content &quot;#{non_admin_user.email} has been deleted.&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="21">
+        <li class="never" data-hits="" data-linenumber="20">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="22">
+        <li class="never" data-hits="" data-linenumber="21">
           
           
           <code class="ruby">end</code>
