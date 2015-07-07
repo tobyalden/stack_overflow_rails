@@ -21,6 +21,17 @@ class UsersController < ApplicationController
     end
   end
 
+  def update
+    if params[:update_info] == "make_admin"
+      if current_user.admin?
+        user = User.find(params[:id])
+        user.update(:admin? => true)
+        flash[:notice] = "#{user.email} was given admin status."
+        redirect_to users_path
+      end
+    end
+  end
+
   private
   def user_params
     params.require(:user).permit(:email, :password, :password_confirmation)

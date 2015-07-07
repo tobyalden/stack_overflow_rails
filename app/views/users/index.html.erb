@@ -7,7 +7,7 @@
       <% if user.admin? %>
         <span> Admin </span>
       <% else %>
-        <%= link_to "Make Admin", edit_user_path(user), :data => {:method => "patch"} %>
+        <%= link_to "Make Admin", user_path(user, :update_info => "make_admin"), :method => "patch", :id => user.id %>
       <% end %>
     </li>
   <% end %>
