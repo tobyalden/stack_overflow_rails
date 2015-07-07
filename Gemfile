@@ -10,6 +10,8 @@ gem 'turbolinks'
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'bcrypt-ruby', '~> 3.1.5', require: "bcrypt"
 gem 'pundit'
+gem 'rest-client'
+gem 'rails-mailgun', git: "git://github.com/code-mancers/rails-mailgun.git"
 
 group :development do
   gem 'byebug'

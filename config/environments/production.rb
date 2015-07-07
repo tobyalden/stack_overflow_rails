@@ -48,6 +48,16 @@ Rails.application.configure do
   # when problems arise.
   config.log_level = :debug
 
+  config.action_mailer.smtp_settings = {
+    :port           => 587,
+    :address        => 'smtp.mailgun.com',
+    :user_name      => 'stackunderflow96',
+    :password       => 'stayfocused',
+    :domain         => 'floating-thicket-3388.herokuapp.com',
+    :authentication => :plain,
+  }
+  config.action_mailer.delivery_method = :smtp
+
   # Prepend all log lines with the following tags.
   # config.log_tags = [ :subdomain, :uuid ]
 
